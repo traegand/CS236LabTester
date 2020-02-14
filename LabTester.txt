@@ -1,0 +1,31 @@
+alias comp236="g++ -Wall -Werror -std=c++17 -g *.cpp -o lab_236"
+
+r236(){
+ ./lab_236 in$1.txt >actual.txt
+}
+
+c236(){
+diff=$(diff out$1.txt actual.txt)
+if [[ "$diff" == "" ]]
+then
+echo "test $1 passed" >>diffFile.txt
+else
+echo "test $1 Failed" >>diffFile.txt
+diff out$1.txt actual.txt >$1Fail.txt
+fi
+}
+
+resetDiff(){  
+rm diffFile.txt
+}
+
+full236(){ 
+resetDiff
+touch diffFile.txt
+for var in $@
+do 
+r236 $var 
+c236 $var 
+done
+cat diffFile.txt
+}
