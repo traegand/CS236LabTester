@@ -1,6 +1,9 @@
 # CS236LabTester
 Tests your lab output against the input and output files that are given and generates .txt files for all failed tests
 
+# LabTester.sh now added!
+All you have to do is run the LabTester.sh file in the directory you want with input file numbers as your input and you are good to go!
+
 # What is contained in the LabTester.txt file?
 The LabTester.txt file contains some bash functions and aliases that can be used to quickly test your code. 
 The functions include:
